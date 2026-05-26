@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HKIA T3 Aluminum Panel | Nex Wong</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #1a2a3a;
+      --accent: #c8922a;
+      --accent-light: #e8b85a;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fa;
+      --text: #2c3e50;
+      --text-light: #7f8c8d;
+      --border: #e1e8ed;
+    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: var(--text); line-height: 1.6; background: var(--bg); }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: var(--accent); text-decoration: none; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--border); z-index: 100; padding: 0 24px; }
+    .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 64px; }
+    .nav-logo { font-size: 15px; font-weight: 700; color: var(--primary); letter-spacing: 1px; }
+    .nav-logo a { color: inherit; text-decoration: none; }
+    .back-link { font-size: 14px; font-weight: 500; color: var(--text-light); transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+
+    /* HERO */
+    .hero { margin-top: 64px; background: var(--primary); position: relative; overflow: hidden; }
+    .hero img { width: 100%; height: 60vh; object-fit: cover; opacity: 0.35; }
+    .hero-content { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: 0 24px; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+    .hero-tag { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .hero h1 { font-size: 42px; font-weight: 800; color: #fff; margin-bottom: 16px; line-height: 1.2; }
+    .hero p { font-size: 18px; color: rgba(255,255,255,0.75); max-width: 600px; }
+
+    /* CONTENT */
+    .section { padding: 64px 24px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    h2 { font-size: 28px; font-weight: 700; color: var(--primary); margin-bottom: 24px; }
+
+    /* PROJECT INFO GRID */
+    .info-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 48px; }
+    .info-card { background: var(--bg-alt); padding: 24px; border-radius: 8px; }
+    .info-card .label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--text-light); margin-bottom: 8px; }
+    .info-card .value { font-size: 15px; font-weight: 700; color: var(--primary); }
+
+    /* DESCRIPTION */
+    .desc { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 64px; }
+    .desc-text { font-size: 16px; color: var(--text); line-height: 1.8; }
+    .desc-text p { margin-bottom: 16px; }
+    .spec-list { background: var(--bg-alt); padding: 32px; border-radius: 12px; }
+    .spec-list h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 20px; }
+    .spec-list ul { list-style: none; }
+    .spec-list li { font-size: 14px; color: var(--text); padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .spec-list li:last-child { border-bottom: none; }
+    .spec-list li::before { content: '✓ '; color: var(--accent); font-weight: 700; }
+
+    /* IMAGE GALLERY */
+    .gallery { margin-bottom: 64px; }
+    .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .gallery-grid img { width: 100%; aspect-ratio: 16/10; object-fit: cover; border-radius: 8px; }
+    .gallery-grid .full { grid-column: 1 / -1; aspect-ratio: 21/9; }
+
+    /* PROCESS */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 32px; }
+    .process-step { background: var(--bg-alt); padding: 28px 20px; border-radius: 10px; text-align: center; }
+    .step-num { font-size: 36px; font-weight: 800; color: var(--accent); margin-bottom: 12px; }
+    .process-step h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+    .process-step p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
+
+    /* CTA */
+    .cta { background: var(--accent); text-align: center; padding: 64px 24px; }
+    .cta h2 { color: #fff; font-size: 32px; margin-bottom: 12px; }
+    .cta p { color: rgba(255,255,255,0.85); font-size: 16px; margin-bottom: 24px; }
+    .btn-white { background: #fff; color: var(--primary); padding: 14px 36px; border-radius: 4px; text-decoration: none; font-weight: 700; font-size: 15px; display: inline-block; transition: background 0.2s; }
+    .btn-white:hover { background: rgba(255,255,255,0.88); }
+
+    /* FOOTER */
+    footer { background: var(--primary); padding: 32px 24px; text-align: center; }
+    footer p { color: rgba(255,255,255,0.5); font-size: 13px; }
+    footer a { color: rgba(255,255,255,0.7); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo"><a href="index.html">Nex Wong — Fit-Out Specialist</a></div>
+    <a href="index.html#projects" class="back-link">← Back to Projects</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="images/667.png" alt="HKIA T3 Aluminum Panel">
+  <div class="hero-content">
+    <div class="hero-inner">
+      <div class="hero-tag">Airport</div>
+      <h1>Hong Kong International Airport T3<br>Aluminum Panel Fabrication</h1>
+      <p>Custom fluorocarbon-coated aluminum panel system for the Terminal 3 expansion. Precision laser cutting, CNC bending, and professional installation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT INFO -->
+<section class="section">
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Project</div>
+        <div class="value">HKIA T3</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Scope</div>
+        <div class="value">Aluminum Fabrication</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Material</div>
+        <div class="value">PVDF Aluminum</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Year</div>
+        <div class="value">2026</div>
+      </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="desc">
+      <div class="desc-text">
+        <div class="section-label">Project Overview</div>
+        <h2>Precision Aluminum Fabrication for a World-Class Terminal</h2>
+        <p>Hong Kong International Airport Terminal 3 represents the highest standards in modern airport architecture. Our scope covered the complete fabrication and installation of custom aluminum panel systems throughout the terminal.</p>
+        <p>Every panel was precision-cut using laser technology, formed with CNC bending machines, and finished with fluorocarbon (PVDF) coating for long-term durability against Hong Kong's coastal climate.</p>
+        <p>The stainless steel edge trim was fabricated in-house, ensuring clean transitions and a premium finish that meets airport-grade quality specifications.</p>
+      </div>
+      <div class="spec-list">
+        <h3>Specifications</h3>
+        <ul>
+          <li>3mm fluorocarbon-coated (PVDF) aluminum sheets</li>
+          <li>Precision laser cutting — zero tolerance gaps</li>
+          <li>CNC bending for complex panel geometry</li>
+          <li>Stainless steel edge trim</li>
+          <li>Weather-resistant coating system</li>
+          <li>Full in-house quality inspection</li>
+          <li>Professional on-site installation</li>
+          <li>Airport compliance standards met</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+      <div class="section-label">Gallery</div>
+      <h2>Project Photos</h2>
+      <div class="gallery-grid">
+        <img class="full" src="images/667.png" alt="HKIA T3 Aluminum Panel Overview">
+        <img src="images/project-t3-1.png" alt="Panel detail close-up">
+        <img src="images/project-t3-2.jpeg" alt="Installation process">
+        <img src="images/project-t3-3.jpeg" alt="Finished panel system">
+        <img class="full" src="images/project-t3-4.jpg" alt="Quality inspection">
+      </div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="section-label">How We Deliver</div>
+    <h2>Fabrication Process</h2>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <h4>Technical Review</h4>
+        <p>AutoCAD drawings reviewed and confirmed. Material specifications verified against project requirements.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <h4>Laser Cutting</h4>
+        <p>Precision laser cutting of 3mm aluminum sheets. Clean edges, accurate dimensions.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <h4>CNC Bending</h4>
+        <p>CNC press brakes form complex panel shapes. Consistent quality across all panels.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">04</div>
+        <h4>PVDF Coating</h4>
+        <p>Fluorocarbon coating applied for weather resistance. Oven-cured for durability.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">05</div>
+        <h4>Edge Trimming</h4>
+        <p>Stainless steel edge trim fabricated and fitted. Clean, premium finish.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">06</div>
+        <h4>QC & Packaging</h4>
+        <p>100% inspection before dispatch. Protected packaging for transport.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">07</div>
+        <h4>On-site Installation</h4>
+        <p>Professional installation team. Clean, on-time delivery.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">08</div>
+        <h4>Handover</h4>
+        <p>Final inspection with client. Documentation handed over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Have a Similar Project?</h2>
+  <p>Contact us to discuss your next airport or commercial fit-out project.</p>
+  <a href="index.html#contact" class="btn-white">Get in Touch</a>
+</section>
+
+<footer>
+  <p><a href="index.html" style="color:rgba(255,255,255,0.7);">Nex Wong — Airport & Hotel Fit-Out Specialist</a></p>
+</footer>
+
+</body>
+</html>
