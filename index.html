@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong Liyuan Building Materials | Public Infrastructure & Hospitality Fit-Out Specialist</title>
+  <style>
+    /* ===== RESET & BASE ===== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --primary: #1a2a3a;
+      --accent: #c8922a;
+      --accent-light: #e8b85a;
+      --bg: #ffffff;
+      --bg-alt: #f5f7fa;
+      --text: #2c3e50;
+      --text-light: #7f8c8d;
+      --border: #e1e8ed;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--bg);
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      font-size: 18px;
+      color: var(--text-light);
+      max-width: 600px;
+      margin-bottom: 48px;
+    }
+
+    /* ===== NAV ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.97);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent) !important;
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent-light) !important; }
+
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 64px;
+      background: var(--primary);
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      opacity: 0.25;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(26,42,58,0.85) 0%, rgba(26,42,58,0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 0;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 24px;
+      max-width: 700px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      margin-bottom: 40px;
+      line-height: 1.7;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+
+    .btn-primary:hover { background: var(--accent-light); }
+
+    .btn-outline {
+      border: 2px solid rgba(255,255,255,0.4);
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+      transition: border-color 0.2s;
+      display: inline-block;
+    }
+
+    .btn-outline:hover { border-color: #fff; }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .stat-card {
+      background: var(--bg-alt);
+      padding: 28px 24px;
+      border-radius: 8px;
+    }
+
+    .stat-num {
+      font-size: 40px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 14px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    .about-img-placeholder {
+      background: var(--bg-alt);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      aspect-ratio: 4/3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 14px;
+      text-align: center;
+      padding: 24px;
+    }
+
+    .about-img-placeholder span { margin-top: 8px; font-size: 12px; opacity: 0.6; }
+
+    /* ===== CAPABILITIES ===== */
+    .capabilities { background: var(--bg-alt); }
+
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .cap-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 32px 24px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .cap-card:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .cap-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--primary);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--accent);
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .cap-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .cap-card ul {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    .cap-card li::before {
+      content: '— ';
+      color: var(--accent);
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .project-card {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .project-img-placeholder {
+      aspect-ratio: 16/10;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 13px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .project-img-placeholder span { margin-top: 6px; font-size: 11px; opacity: 0.6; }
+
+    .project-info {
+      padding: 24px;
+    }
+
+    .project-tag {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .project-info h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .project-info p {
+      font-size: 13px;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ===== WHY US ===== */
+    .whyus { background: var(--primary); }
+
+    .whyus .section-label { color: var(--accent-light); }
+    .whyus .section-title { color: #fff; }
+    .whyus .section-sub { color: rgba(255,255,255,0.6); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 32px;
+    }
+
+    .why-num {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 16px;
+      line-height: 1;
+    }
+
+    .why-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ===== TARGET ===== */
+    .target-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .target-item {
+      text-align: center;
+      padding: 32px 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s;
+    }
+
+    .target-item:hover { border-color: var(--accent); }
+
+    .target-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+    }
+
+    .target-item h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .target-item p {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      background: var(--accent);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta h2 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 32px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+      padding: 14px 36px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      display: inline-block;
+      transition: background 0.2s;
+    }
+
+    .btn-white:hover { background: rgba(255,255,255,0.88); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--primary);
+      padding: 48px 24px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-brand h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    .footer-col h5 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li { margin-bottom: 10px; }
+
+    .footer-col a {
+      text-decoration: none;
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover { color: #fff; }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      text-align: center;
+    }
+
+    /* ===== MOBILE ===== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero h1 { font-size: 34px; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .cap-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .why-grid { grid-template-columns: 1fr; }
+      .target-list { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+      .section { padding: 60px 0; }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 28px; }
+      .cap-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">LIYUAN BM</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#capabilities">Capabilities</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <!-- REPLACE: hero background image -->
+    <img src="images/IMG_6362.jpeg" class="hero-img-bg" alt="Hong Kong Liyuan Building Materials">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <div class="hero-eyebrow">Hong Kong | Pearl River Delta Manufacturing</div>
+      <h1>One-Stop Multi-Material Customization for Public Infrastructure & High-End Hospitality Projects</h1>
+      <p>Metal, wood, stone, and glass fabrication — all under one contractor. Trusted by Hong Kong International Airport, Disneyland, Ocean Park, St. Teresa's Hospital, Kai Tak Sports Park, and major Hong Kong shopping malls.</p>
+      <div class="hero-btns" style="gap:12px;">
+        <a href="https://wa.me/8618675966667" class="btn-primary" style="background:#25D366;">WhatsApp Us</a>
+        <a href="mailto:nexwong@163.com" class="btn-outline">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Factory-Direct.<br>Airport-Grade Quality.</h2>
+          <p style="margin-bottom:24px; color:var(--text-light); font-size:16px; line-height:1.8;">
+            Hong Kong Liyuan Building Materials Industrial Co., Ltd. specializes in custom fabrication and installation for public infrastructure, high-end hospitality, and commercial fit-out projects.
+          </p>
+          <p style="margin-bottom:24px; color:var(--text-light); font-size:16px; line-height:1.8;">
+            With a fully equipped factory in the Pearl River Delta, we deliver metal, wood, stone, and glass work — all under one roof, one invoice, one quality standard.
+          </p>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-num">50%</div>
+              <div class="stat-label">Faster lead time vs multi-supplier</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">4</div>
+              <div class="stat-label">Material capabilities</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">HKIA</div>
+              <div class="stat-label">Airport supplier</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-num">Disney</div>
+              <div class="stat-label">& Ocean Park</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <img src="images/first.png" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;" alt="Drawing">
+            <img src="images/3.png" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;" alt="Render">
+            <img src="images/1103.jpeg" style="width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:8px;" alt="Reality">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="section capabilities" id="capabilities">
+    <div class="container">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Full-Spectrum Fabrication</h2>
+      <p class="section-sub">Metal, wood, stone, glass — integrated under one contractor. No more managing four different suppliers.</p>
+
+      <div class="cap-grid">
+        <div class="cap-card">
+          <div class="cap-icon">M</div>
+          <h3>Metal Fabrication</h3>
+          <ul>
+            <li>Stainless steel, aluminum, mild steel</li>
+            <li>PVD coating, powder coating</li>
+            <li>Laser cutting, CNC bending, welding</li>
+            <li>Precision tolerances</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">W</div>
+          <h3>Wood Working</h3>
+          <ul>
+            <li>Plywood, solid wood, WPC, HPL</li>
+            <li>Fire-rated boards available</li>
+            <li>CNC carving, edge banding</li>
+            <li>Spray painting & finishing</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">S</div>
+          <h3>Stone & Solid Surface</h3>
+          <ul>
+            <li>Engineered & natural stone</li>
+            <li>Solid surface (Corian-type)</li>
+            <li>Waterproof & antibacterial</li>
+            <li>Seamless jointing</li>
+          </ul>
+        </div>
+        <div class="cap-card">
+          <div class="cap-icon">G</div>
+          <h3>Glass & Aluminum</h3>
+          <ul>
+            <li>Tempered & laminated glass</li>
+            <li>Curtain wall systems</li>
+            <li>Aluminum windows & doors</li>
+            <li>Low-E, double-glazed units</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-label">Selected Projects</div>
+      <h2 class="section-title">Proven on Airport & Hotel Sites</h2>
+      <p class="section-sub">Real projects. Real specifications. Real delivery.</p>
+
+      <div class="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+          <!-- REPLACE: HKIA project photo -->
+          <div class="project-img-placeholder">
+            <img src="images/IMG_6359.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:0;" alt="Hong Kong International Airport Project">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Airport</div>
+            <h3>Hong Kong International Airport — Check-in Counters & Landscaping</h3>
+            <p>Custom metal-wood composite check-in counters, farm boxes, stepped seating, and raised platforms. Delivered 2026.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+          <!-- REPLACE: Disney hotel project photo -->
+          <div class="project-img-placeholder">
+            <img src="images/IMG_6358.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:0;" alt="Hong Kong Disneyland Hotel Project">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Hotel</div>
+            <h3>Hong Kong Disneyland Hotel — Guest Room Furniture</h3>
+            <p>10 zones of custom wood furniture. Plywood + fire-rated boards, natural stone, stainless steel edge trim. Delivered 2026.</p>
+          </div>
+        </div>
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+          <!-- REPLACE: Fire station facade project photo -->
+          <div class="project-img-placeholder">
+            <img src="images/IMG_6350.jpeg" style="width:100%;height:100%;object-fit:cover;border-radius:0;" alt="Lok Ma Chau Fire Station Facade">
+          </div>
+          <div class="project-info">
+            <div class="project-tag">Government</div>
+            <h3>Lok Ma Chau Fire Station — Facade System</h3>
+            <p>Aluminum cladding, louvres, curtain wall, and roofing. 3mm fluorocarbon-coated aluminum. Delivered 2026.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section whyus">
+    <div class="container">
+      <div class="section-label">Why Work With Us</div>
+      <h2 class="section-title">Built for Overseas Main Contractors</h2>
+      <p class="section-sub">We understand the pressure of coordinating multiple suppliers. That's why we do it all.</p>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h3>One Contractor, One Invoice</h3>
+          <p>Metal + wood + stone + glass — single point of contact, single invoice. No multi-supplier coordination.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h3>Factory-Direct Pricing</h3>
+          <p>We manufacture in the Pearl River Delta. You get China manufacturing costs with Hong Kong quality standards.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h3>HKIA & Disney Experience</h3>
+          <p>We have delivered to Hong Kong International Airport and Walt Disney. We understand high-spec, high-compliance projects.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h3>English-Speaking Project Managers</h3>
+          <p>AutoCAD drawings, BIM documentation, progress reports — all in English. Clear communication throughout.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <h3>Samples Before Mass Production</h3>
+          <p>Physical samples available for approval before full production runs. No surprises on site.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">06</div>
+          <h3>Fast Lead Times</h3>
+          <p>50% faster lead time compared to traditional multi-supplier approach. In-house production, tight scheduling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TARGET MARKET -->
+  <section class="section">
+    <div class="container">
+      <div class="section-label">Who We Work With</div>
+      <h2 class="section-title">Target Market</h2>
+      <p class="section-sub">We partner with overseas main contractors who need a reliable China-based manufacturing partner.</p>
+
+      <div class="target-list">
+        <div class="target-item">
+          <div class="target-icon">✈️</div>
+          <h4>Airport Terminal Fit-Out</h4>
+          <p>Check-in counters, service desks, signage, furniture</p>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🏨</div>
+          <h4>Hotel Chain Renovations</h4>
+          <p>Lobby, guest rooms, banquet, back-of-house</p>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">🏗️</div>
+          <h4>Commercial Main Contractors</h4>
+          <p>Shopping malls, offices, public buildings</p>
+        </div>
+        <div class="target-item">
+          <div class="target-icon">📐</div>
+          <h4>Project Managers & QS</h4>
+          <p>Custom quotes, BQ support, CAD coordination</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Ready to Start a Project?</h2>
+      <p>Message us directly on WhatsApp or email us. We respond within 24 hours.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://wa.me/8618675966667" class="btn-white" style="background:#25D366;color:#fff;">WhatsApp Us</a>
+        <a href="mailto:nexwong@163.com" class="btn-white">Email Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h4>Hong Kong Liyuan Building Materials Industrial Co., Ltd.</h4>
+        <p>One-Stop Multi-Material Customization<br>Public Infrastructure & High-End Hospitality Fit-Out</p>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="#capabilities">Metal Fabrication</a></li>
+          <li><a href="#capabilities">Wood Working</a></li>
+          <li><a href="#capabilities">Stone & Glass</a></li>
+          <li><a href="#capabilities">Installation</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Projects</h5>
+        <ul>
+          <li><a href="#projects">HKIA</a></li>
+          <li><a href="#projects">Disneyland Hotel</a></li>
+          <li><a href="#projects">Fire Station</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="https://wa.me/8618675966667">WhatsApp</a></li>
+          <li><a href="mailto:nexwong@163.com">Email</a></li>
+          <li><a href="https://linkedin.com/in/nexwong">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 Hong Kong Liyuan Building Materials Industrial Co., Ltd. All rights reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
